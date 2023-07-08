@@ -6,9 +6,16 @@ GPIO.setup(7, GPIO.OUT)
 
 p = GPIO.PWM(7, 50)
 
-duty_cycle = 0.0
 
-p.start(duty_cycle)
+p.start(0)
+print("Starting 0")
+time.sleep(5)
+
+duty_cycle = 3.0
+
+p.ChangeDutyCycle(duty_cycle)
+time.sleep(5)
+
 
 while duty_cycle < 10.0:
     duty_cycle += 0.1
@@ -16,7 +23,7 @@ while duty_cycle < 10.0:
     print(duty_cycle)
     time.sleep(0.1)
 
-while duty_cycle > 0.0:
+while duty_cycle > 0.1:
     duty_cycle -= 0.1
     p.ChangeDutyCycle(duty_cycle)
     print(duty_cycle)
