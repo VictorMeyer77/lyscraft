@@ -26,6 +26,8 @@ while duty_cycle < 7.0:
     print(duty_cycle)
     time.sleep(0.1)
 
+time.sleep(1)
+
 while duty_cycle > 0.1:
     duty_cycle -= 0.1
     p.ChangeDutyCycle(duty_cycle)
