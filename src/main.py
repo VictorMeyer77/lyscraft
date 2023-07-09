@@ -1,5 +1,6 @@
 # masse gpio 6
 # signal gpio 7
+# commence a avancer vers 7 duty cycle
 
 import RPi.GPIO as GPIO
 import time
@@ -20,7 +21,7 @@ p.ChangeDutyCycle(duty_cycle)
 time.sleep(5)
 
 
-while duty_cycle < 7.0:
+while duty_cycle < 9.0:
     duty_cycle += 0.1
     p.ChangeDutyCycle(duty_cycle)
     print(duty_cycle)
