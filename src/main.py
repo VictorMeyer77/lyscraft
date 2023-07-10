@@ -27,7 +27,7 @@ while duty_cycle < 9.0:
     print(duty_cycle)
     time.sleep(0.1)
 
-time.sleep(3)
+time.sleep(2)
 
 while duty_cycle > 0.1:
     duty_cycle -= 0.1
