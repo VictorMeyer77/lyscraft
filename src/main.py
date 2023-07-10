@@ -20,7 +20,22 @@ duty_cycle = 3.0
 p.ChangeDutyCycle(duty_cycle)
 time.sleep(5)
 
+while True:
 
+    try:
+        com = input("")
+        if com == "o":
+            duty_cycle += 0.1
+        elif com == "l":
+            duty_cycle -= 0.1
+        p.ChangeDutyCycle(duty_cycle)
+        print(duty_cycle)
+        time.sleep(0.1)
+    except Exception:
+        p.stop()
+        GPIO.cleanup()
+
+"""
 while duty_cycle < 10.0:
     duty_cycle += 0.1
     p.ChangeDutyCycle(duty_cycle)
@@ -36,4 +51,4 @@ while duty_cycle > 0.1:
     time.sleep(0.1)
 
 p.stop()
-GPIO.cleanup()
+GPIO.cleanup()"""
