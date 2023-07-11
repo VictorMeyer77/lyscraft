@@ -1,11 +1,12 @@
 # masse gpio 6
 # signal gpio 7
 # commence a avancer vers 7 duty cycle
-
+"""
 import RPi.GPIO as GPIO
 import time
 
 GPIO.setmode(GPIO.BOARD)
+GPIO.cleanup()
 GPIO.setup(7, GPIO.OUT)
 
 p = GPIO.PWM(7, 50)
@@ -20,22 +21,6 @@ duty_cycle = 3.0
 p.ChangeDutyCycle(duty_cycle)
 time.sleep(5)
 
-while True:
-
-    try:
-        com = input("")
-        if com == "o":
-            duty_cycle += 0.1
-        elif com == "l":
-            duty_cycle -= 0.1
-        p.ChangeDutyCycle(duty_cycle)
-        print(duty_cycle)
-        time.sleep(0.1)
-    except Exception:
-        p.stop()
-        GPIO.cleanup()
-
-"""
 while duty_cycle < 10.0:
     duty_cycle += 0.1
     p.ChangeDutyCycle(duty_cycle)
@@ -52,3 +37,13 @@ while duty_cycle > 0.1:
 
 p.stop()
 GPIO.cleanup()"""
+
+import RPi.GPIO as GPIO
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(7, GPIO.OUT)
+
+p = GPIO.PWM(7, 50)
+p.start(10)
+input('Press return to stop:')
+p.stop()
+GPIO.cleanup()
