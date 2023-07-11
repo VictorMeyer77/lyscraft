@@ -1,7 +1,7 @@
 # masse gpio 6
 # signal gpio 7
 # commence a avancer vers 7 duty cycle
-"""
+
 import RPi.GPIO as GPIO
 import time
 
@@ -21,7 +21,7 @@ duty_cycle = 3.0
 p.ChangeDutyCycle(duty_cycle)
 time.sleep(5)
 
-while duty_cycle < 10.0:
+while duty_cycle < 6.0:
     duty_cycle += 0.1
     p.ChangeDutyCycle(duty_cycle)
     print(duty_cycle)
@@ -29,21 +29,7 @@ while duty_cycle < 10.0:
 
 time.sleep(10)
 
-while duty_cycle > 0.1:
-    duty_cycle -= 0.1
-    p.ChangeDutyCycle(duty_cycle)
-    print(duty_cycle)
-    time.sleep(0.1)
 
-p.stop()
-GPIO.cleanup()"""
 
-import RPi.GPIO as GPIO
-GPIO.setmode(GPIO.BOARD)
-GPIO.setup(7, GPIO.OUT)
-
-p = GPIO.PWM(7, 50)
-p.start(6)
-input('Press return to stop:')
 p.stop()
 GPIO.cleanup()
