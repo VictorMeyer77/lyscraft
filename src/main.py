@@ -43,7 +43,7 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(7, GPIO.OUT)
 
 p = GPIO.PWM(7, 50)
-p.start(10)
+p.start(6)
 input('Press return to stop:')
 p.stop()
 GPIO.cleanup()
