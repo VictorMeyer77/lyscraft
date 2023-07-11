@@ -7,9 +7,9 @@ import time
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.cleanup()
-GPIO.setup(7, GPIO.OUT)
+GPIO.setup(12, GPIO.OUT)
 
-p = GPIO.PWM(7, 50)
+p = GPIO.PWM(12, 50)
 
 
 p.start(0)
