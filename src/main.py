@@ -44,4 +44,5 @@ ringer=PWMOutputDevice(12, initial_value=0,frequency=50)
 # fade in
 for duty_cycle in range(0, 100, 1):
     ringer.value = duty_cycle / 100.0
+    print(ringer.value)
     time.sleep(0.05)
