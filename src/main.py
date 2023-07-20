@@ -53,7 +53,7 @@ print("3")
 time.sleep(5)
 
 ii = 4
-steps = [5.85, 5.9, 5.95, 6.0]
+steps = [6, 7, 8]
 current_step = -1
 
 
