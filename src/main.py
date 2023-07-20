@@ -40,9 +40,17 @@ import time
 
 ringer=PWMOutputDevice(12, initial_value=0,frequency=50)
 
+ringer.value = 0
+time.sleep(5)
+
+ringer.value = 3.0 / 100.0
+time.sleep(5)
+
 
 # fade in
-for duty_cycle in range(0, 100, 1):
+for duty_cycle in range(3, 10):
     ringer.value = duty_cycle / 100.0
     print(ringer.value)
-    time.sleep(0.05)
+    time.sleep(0.1)
+
+time.sleep(5)
