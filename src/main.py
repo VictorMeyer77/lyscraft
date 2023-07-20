@@ -42,8 +42,8 @@ servo = Servo(12)
 
 while True:
     servo.min()
-    sleep(1)
+    sleep(10)
     servo.mid()
-    sleep(1)
+    sleep(10)
     servo.max()
-    sleep(1)
+    sleep(10)
