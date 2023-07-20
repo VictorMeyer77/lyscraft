@@ -2,7 +2,6 @@
 # signal gpio 7
 # commence a avancer vers 7 duty cycle
 
-"""
 import RPi.GPIO as GPIO
 import time
 
@@ -33,8 +32,8 @@ time.sleep(10)
 
 
 p.stop()
-GPIO.cleanup()"""
-
+GPIO.cleanup()
+"""
 import time
 
 import RPi.GPIO as GPIO
@@ -88,4 +87,4 @@ while True:
         break
 
 p.stop()
-GPIO.cleanup()
+GPIO.cleanup()"""
