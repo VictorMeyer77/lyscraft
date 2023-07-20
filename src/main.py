@@ -86,3 +86,6 @@ while True:
         ii = steps[current_step]
     elif s == "p":
         break
+
+p.stop()
+GPIO.cleanup()
