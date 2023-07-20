@@ -2,6 +2,7 @@
 # signal gpio 7
 # commence a avancer vers 7 duty cycle
 
+"""
 import RPi.GPIO as GPIO
 import time
 
@@ -32,4 +33,17 @@ time.sleep(10)
 
 
 p.stop()
-GPIO.cleanup()
+GPIO.cleanup()"""
+
+from gpiozero import Servo
+from time import sleep
+
+servo = Servo(12)
+
+while True:
+    servo.min()
+    sleep(1)
+    servo.mid()
+    sleep(1)
+    servo.max()
+    sleep(1)
