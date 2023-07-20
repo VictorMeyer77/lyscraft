@@ -35,15 +35,15 @@ time.sleep(10)
 p.stop()
 GPIO.cleanup()"""
 
-from gpiozero import Servo
-from time import sleep
+from gpiozero import PWMOutputDevice
+import time
 
-servo = Servo(12)
+ringer=PWMOutputDevice(12, initial_value=0,frequency=50)
 
-while True:
-    servo.min()
-    sleep(10)
-    servo.mid()
-    sleep(10)
-    servo.max()
-    sleep(10)
+ringer.on()
+
+ringer.value = 1
+
+time.sleep(5)
+
+ringer.off()
